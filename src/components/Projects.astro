@@ -18,52 +18,52 @@ import LinkButton from "./LinkButton.astro"
 const TAGS = {
   HTML: {
     name: "HTML",
-    class: "bg-[#571E00] text-white hover:bg-slate-400 hover:text-black",
+    class: "bg-[#571E00] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: HTML,
   },
   CSS: {
     name: "CSS",
-    class: "bg-[#004259] text-white hover:bg-slate-400 hover:text-black",
+    class: "bg-[#004259] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: CSS,
   },
   JAVASCRIPT: {
     name: "JavaScript",
-    class: "bg-[#595400] text-white hover:bg-slate-400 hover:text-black",
+    class: "bg-[#595400] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: JavaScript,
   },
   REACT: {
     name: "React",
-    class: "bg-[#002D59] text-white hover:bg-slate-400 hover:text-black",
+    class: "bg-[#002D59] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: React,
   },
   BOOTSTRAP: {
     name: "Bootstrap",
-    class: "bg-[#3E0059] text-white hover:bg-slate-400 hover:text-black",
+    class: "bg-[#3E0059] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: Bootstrap,
   },
   SASS: {
     name: "Sass",
-    class: "bg-[#59003F] text-white hover:bg-slate-400 hover:text-black",
+    class: "bg-[#59003F] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: Sass,
   },
   NODE: {
     name: "Node",
-    class: "bg-[#095900] text-white hover:bg-slate-400 hover:text-black",
+    class: "bg-[#095900] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: Node,
   },
   EXPRESS: {
     name: "Express",
-    class: "bg-[#00572F] text-white hover:bg-slate-400 hover:text-black",
+    class: "bg-[#00572F] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: Express,
   },
   HANDLEBARS: {
     name: "Handlebars",
-    class: "bg-[#593000] text-white hover:bg-slate-400 hover:text-black",
+    class: "bg-[#593000] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: Handlebars,
   },
   FIREBASE: {
     name: "Firebase",
-    class: "bg-[#593E00] text-white hover:bg-slate-400 hover:text-black",
+    class: "bg-[#593E00] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: Firebase,
   },
 }
@@ -123,7 +123,7 @@ const PROJECTS = [
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img alt=`Imagen de ${title}` class="object-cover object-top h-full transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100" loading="lazy" src={image} />
+            <img alt=`Imagen de ${title}` class="object-cover object-top h-48 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100" loading="lazy" src={image} />
           </div>
         </div>
 
