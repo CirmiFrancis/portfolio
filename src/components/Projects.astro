@@ -11,6 +11,7 @@ import Node from "./icons/Node.astro"
 import Express from "./icons/Express.astro"
 import Handlebars from "./icons/Handlebars.astro"
 import Firebase from "./icons/Firebase.astro"
+import MongoDB from "./icons/MongoDB.astro"
 
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
@@ -66,9 +67,23 @@ const TAGS = {
     class: "bg-[#593E00] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: Firebase,
   },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-[#00781B] text-white md:hover:bg-slate-400 md:hover:text-black",
+    icon: MongoDB,
+  },
 }
 
 const PROJECTS = [
+  {
+    title: "Saborear - ¡Los mejores productos al mejor precio!",
+    description:
+      "Tienda en línea ficticia dedicada a la venta de productos consumibles. Hecho para el curso de 'Programación Backend' de Coderhouse.",
+    link: "https://saborear.up.railway.app/",
+    github: "https://github.com/CirmiFrancis/coderhouse-backend",
+    image: "/projects/saborear.webp",
+    tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.MONGODB, TAGS.HANDLEBARS, TAGS.BOOTSTRAP, TAGS.CSS],
+  },
   {
     title: "GiGames - ¡Compra tus videojuegos favoritos al mejor precio!",
     description:
@@ -94,7 +109,7 @@ const PROJECTS = [
     link: "https://cirmifrancis.github.io/javascript-items-list/",
     github: "https://github.com/CirmiFrancis/javascript-items-list",
     image: "/projects/itemslist.webp",
-    tags: [TAGS.JAVASCRIPT, TAGS.BOOTSTRAP],
+    tags: [TAGS.JAVASCRIPT, TAGS.BOOTSTRAP, TAGS.HTML, TAGS.CSS],
   },
   {
     title: "Live Chat - ¡Escribe tu nombre y comienza a chatear!",
@@ -103,7 +118,7 @@ const PROJECTS = [
     link: "https://cirmifrancis-live-chat.glitch.me/",
     github: "https://github.com/CirmiFrancis/live-chat",
     image: "/projects/livechat.webp",
-    tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.HANDLEBARS],
+    tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.HANDLEBARS, TAGS.CSS],
   },
   {
     title: "Calculator - ¡Tu calculadora de confianza!",
@@ -112,18 +127,20 @@ const PROJECTS = [
     link: "https://cirmifrancis.github.io/javascript-calculator/",
     github: "https://github.com/CirmiFrancis/javascript-calculator",
     image: "/projects/calculator.webp",
-    tags: [TAGS.JAVASCRIPT, TAGS.CSS, TAGS.HTML],
-  },
+    tags: [TAGS.JAVASCRIPT, TAGS.HTML, TAGS.CSS],
+  }
+
 ]
+
 ---
 
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+      <article class="flex flex-col items-center space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img alt=`Imagen de ${title}` class="object-cover object-top h-48 w-full transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100" loading="lazy" src={image} />
+            <img alt=`Imagen de ${title}` class="object-cover object-top h-48 w-full transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-100" src={image} />
           </div>
         </div>
 
@@ -132,10 +149,10 @@ const PROJECTS = [
             {title}
           </h3>
           <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
+            <ul class="flex flex-row flex-wrap mb-2 gap-x-2 gap-y-2">
               {tags.map((tag) => (
                 <li>
-                  <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}>
+                  <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
                     <tag.icon class="size-4" />
                     {tag.name}
                   </span>

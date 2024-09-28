@@ -3,7 +3,12 @@ import SunIcon from "./icons/Sun.astro"
 import MoonIcon from "./icons/Moon.astro"
 import SystemIcon from "./icons/System.astro"
 
-const THEMES = ["Light", "Dark", "System"]
+// Cambiamos los nombres para mostrar en la interfaz
+const THEMES = [
+  { name: "Claro", value: "light" },
+  { name: "Oscuro", value: "dark" },
+  { name: "Sistema", value: "system" }
+]
 ---
 
 <div class="relative ml-1 mr-1">
@@ -13,14 +18,8 @@ const THEMES = ["Light", "Dark", "System"]
   >
     <span class="sr-only">Elige el tema</span>
     <SunIcon id="light" class="theme-toggle-icon size-5 transition-all" />
-    <MoonIcon
-      id="dark"
-      class="theme-toggle-icon absolute size-5 transition-all"
-    />
-    <SystemIcon
-      id="system"
-      class="theme-toggle-icon absolute size-5 transition-all"
-    />
+    <MoonIcon id="dark" class="theme-toggle-icon absolute size-5 transition-all" />
+    <SystemIcon id="system" class="theme-toggle-icon absolute size-5 transition-all" />
   </button>
   <div
     id="themes-menu"
@@ -29,8 +28,11 @@ const THEMES = ["Light", "Dark", "System"]
     <ul>
       {
         THEMES.map((theme) => (
-          <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
-            {theme}
+          <li 
+            class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm"
+            data-value={theme.value}
+          >
+            {theme.name}
           </li>
         ))
       }
@@ -108,7 +110,8 @@ const THEMES = ["Light", "Dark", "System"]
 
   document.querySelectorAll(".themes-menu-option").forEach((element) => {
     element.addEventListener("click", (e) => {
-      localStorage.setItem("theme", e.target.innerText.toLowerCase().trim())
+      const theme = e.target.getAttribute("data-value")
+      localStorage.setItem("theme", theme)
       updateTheme()
     })
   })
