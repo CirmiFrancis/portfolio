@@ -12,6 +12,8 @@ import Express from "./icons/Express.astro"
 import Handlebars from "./icons/Handlebars.astro"
 import Firebase from "./icons/Firebase.astro"
 import MongoDB from "./icons/MongoDB.astro"
+import AstroIcon from "./icons/AstroIcon.astro"
+import Tailwind from "./icons/Tailwindcss.astro"
 
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
@@ -72,9 +74,28 @@ const TAGS = {
     class: "bg-[#00781B] text-white md:hover:bg-slate-400 md:hover:text-black",
     icon: MongoDB,
   },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#5C3BAF] text-white md:hover:bg-slate-400 md:hover:text-black",
+    icon: AstroIcon,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#19817E] text-white md:hover:bg-slate-400 md:hover:text-black",
+    icon: Tailwind,
+  },
 }
 
 const PROJECTS = [
+  {
+    title: "Paladar - ¡Prueba la mejor comida argentina!",
+    description:
+      "Single Page Application (SPA) de un restaurante argentino ficticio, ubicado en España.",
+    link: "https://paladar-restaurante.netlify.app/",
+    github: "https://github.com/CirmiFrancis/paladar-restaurante",
+    image: "/projects/paladar.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+  },
   {
     title: "Saborear - ¡Los mejores productos al mejor precio!",
     description:
@@ -103,15 +124,6 @@ const PROJECTS = [
     tags: [TAGS.HTML, TAGS.CSS, TAGS.SASS, TAGS.BOOTSTRAP],
   },
   {
-    title: "Items List - ¡Anota y organiza tus actividades!",
-    description:
-      "Herramienta que permite manipular ítems (notas). Posee varias funcionalidades que mejoran la experiencia del usuario. ¡Te invito a probarlo!",
-    link: "https://cirmifrancis.github.io/javascript-items-list/",
-    github: "https://github.com/CirmiFrancis/javascript-items-list",
-    image: "/projects/itemslist.webp",
-    tags: [TAGS.JAVASCRIPT, TAGS.BOOTSTRAP, TAGS.HTML, TAGS.CSS],
-  },
-  {
     title: "Live Chat - ¡Escribe tu nombre y comienza a chatear!",
     description:
       "Chat sencillo para conversar en tiempo real con otras personas conectadas.",
@@ -119,6 +131,15 @@ const PROJECTS = [
     github: "https://github.com/CirmiFrancis/live-chat",
     image: "/projects/livechat.webp",
     tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.HANDLEBARS, TAGS.CSS],
+  },
+  {
+    title: "Items List - ¡Anota y organiza tus actividades!",
+    description:
+      "Herramienta que permite manipular ítems (notas). Posee varias funcionalidades que mejoran la experiencia del usuario. ¡Te invito a probarlo!",
+    link: "https://cirmifrancis.github.io/javascript-items-list/",
+    github: "https://github.com/CirmiFrancis/javascript-items-list",
+    image: "/projects/itemslist.webp",
+    tags: [TAGS.JAVASCRIPT, TAGS.BOOTSTRAP, TAGS.HTML, TAGS.CSS],
   },
   {
     title: "Calculator - ¡Tu calculadora de confianza!",
